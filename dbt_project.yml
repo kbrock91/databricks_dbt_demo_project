@@ -35,15 +35,18 @@ dispatch:
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  file_format: delta
-  incremental_strategy: merge
+  #file_format: delta  # with dbt-databricks adapter this is now the default
+  #incremental_strategy: merge  # with dbt-databricks adapter this is now the default
 
   databricks_demo:
       # Applies to all files under models/example/
-      example:
-          materialized: view
+      util:
+        materialized: view  
       staging:
-          materialized: view
+        materialized: table
       marts:
-          materialized: table
-    
+        materialized: table
+        intermediate:
+            python:
+              +cluster_id: 1121-175813-2agrmn6x
+              +submission_method: all_purpose_cluster

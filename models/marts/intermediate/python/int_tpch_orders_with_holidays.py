@@ -9,7 +9,7 @@ def model(dbt, session):
     dbt.config(
         materialized = "table",
         packages = ["holidays"], #import pypi holidays package
-        create_notebook=True # writes to /Shared/dbt_python_model/
+        create_notebook=True
     )
 
     orders_df = dbt.ref("stg_tpch_orders")
