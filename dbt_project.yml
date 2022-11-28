@@ -41,11 +41,15 @@ models:
   databricks_demo:
       # Applies to all files under models/example/
       util:
-        materialized: view  
-      staging:
+        materialized: view 
+      silver:
         materialized: table
-      marts:
+        +docs:
+          node_color: silver
+      gold:
         materialized: table
+        +docs:
+          node_color: gold
         intermediate:
             python:
               +cluster_id: 1121-175813-2agrmn6x

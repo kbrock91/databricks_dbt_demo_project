@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_airbnb_calendar
+    columns:
+      - name: calendar_id
+        tests:
+         - not_null
+  - name: stg_airbnb_listings
+    columns:
+      - name: listing_id
+        tests:
+         - unique
+         - not_null
+  - name: stg_airbnb_neighborhoods
+    columns:
+      - name: neighborhood_id
+        tests:
+         - not_null
+  - name: stg_airbnb_reviews
+    columns:
+      - name: review_id
+        tests:
+         - unique
+         - not_null
