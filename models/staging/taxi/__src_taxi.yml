@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: taxi
+    schema: csv
+    catalog:
+    tables:
+      - name: taxi-data
+        identifier: '`s3://sales-sandbox-databricks-unity-catalog/s3data/taxi-data`'
