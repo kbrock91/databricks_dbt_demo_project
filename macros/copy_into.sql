@@ -4,7 +4,7 @@
     {%- set header = config.get('header') -%}
     {%- set inferSchema = config.get('inferSchema') -%}
     {%- set mergeSchema = config.get('mergeSchema') -%}
-
+    {%- set s3location = config.get('s3location') -%}
 
     {%- set identifier = model['alias'] -%}
 
@@ -24,9 +24,7 @@
 
         {%- call statement('main') -%}
             COPY INTO {{target_relation}} 
-            FROM ( 
-                {{sql}} 
-            )
+            FROM '{{s3location}}'
             FILEFORMAT = {{file_format}}
             FORMAT_OPTIONS (
                 'header' = '{{header}}',
