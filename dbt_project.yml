@@ -50,3 +50,6 @@ models:
             python:
               +cluster_id: 1121-175813-2agrmn6x
               +submission_method: all_purpose_cluster
+      +persist_docs:
+        relation: true
+        columns: true

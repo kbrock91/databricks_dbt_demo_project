@@ -1,7 +1,10 @@
 {{
     config(
         materialized = 'table',
-        transient=false
+        transient=false,
+        tblproperties={
+            'delta.enableDeletionVectors' : 'true',
+        }
     )
 }}
 
@@ -39,6 +42,7 @@ final as (
         inner join region
             on nation.region_key = region.region_key
 )
+
 select 
     *
 from
