@@ -42,11 +42,11 @@ models:
       # Applies to all files under models/example/
       util:
         materialized: view  
-      staging:
+      bronze:
         materialized: table
-      marts:
+      gold:
         materialized: table
-        intermediate:
-            python:
-              +cluster_id: 1121-175813-2agrmn6x
-              +submission_method: all_purpose_cluster
+      silver:
+          python:
+            +cluster_id: 1121-175813-2agrmn6x
+            +submission_method: all_purpose_cluster
