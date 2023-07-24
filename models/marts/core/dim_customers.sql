@@ -1,7 +1,10 @@
 {{
     config(
         materialized = 'table',
-        transient=false
+        transient=false,
+        tblproperties={
+            'delta.enableDeletionVectors' : 'true',
+        }
     )
 }}
 

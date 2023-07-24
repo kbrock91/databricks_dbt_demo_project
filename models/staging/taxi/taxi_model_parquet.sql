@@ -1,5 +1,5 @@
-{% set file_format='csv' %}
-{% set s3location='s3://sales-sandbox-databricks-unity-catalog/s3data/taxi-data' %}
+{% set file_format='parquet' %}
+{% set s3location='s3://sales-sandbox-databricks-unity-catalog/s3data/taxi-data/parquet' %}
 
 
 {{
