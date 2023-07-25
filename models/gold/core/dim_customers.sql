@@ -1,9 +1,10 @@
 {{
     config(
-        materialized = 'table',
+        materialized = 'view',
         transient=false
     )
 }}
+
 
 with customer as (
 
