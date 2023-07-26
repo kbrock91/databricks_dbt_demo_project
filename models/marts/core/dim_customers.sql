@@ -6,7 +6,6 @@
 }}
 
 
-
 with customer as (
 
     select * from {{ ref('stg_tpch_customers') }}
