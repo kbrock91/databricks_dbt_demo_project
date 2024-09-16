@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', zorder="calendar_id" ) }}
 
 with source as (
 

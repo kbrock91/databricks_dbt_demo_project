@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: taxi
+    tables:
+      - name: taxi-data
+        external:
+          location: s3://sales-sandbox-databricks-unity-catalog/s3data/taxi-data
+          using: csv
+          options:                           # as needed
+            header: 'true'
