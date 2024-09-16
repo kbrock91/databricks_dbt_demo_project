@@ -9,6 +9,7 @@ line_item as (
 
 ),
 
+
 projected as (
 
     select 
